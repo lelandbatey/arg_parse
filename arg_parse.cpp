@@ -105,7 +105,6 @@ void argparse::ArgumentParser::print_args(){
 	}
 
 	std::cout << "Executable name:\n\t" << _executable_name << std::endl;
-
 }
 
 bool argparse::ArgumentParser::empty(){
