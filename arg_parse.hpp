@@ -7,26 +7,29 @@
 
 namespace argparse {
 
-    class argument_parser
-    {
-    public:
-        argument_parser(int argc, char* argv);
-        // ~argument_parser();
-        
-        void print_args();
-        bool is_empty();
-        std::vector<std::string> get_raw_args();
-        bool option_exists(std::string key);
-        std::string get_option(std::string key);
+	class ArgumentParser
+	{
+	public:
+		ArgumentParser(int argc, const char* argv[]);
+		// ~ArgumentParser();
+		
+		void print_args();
+		bool empty();
+		std::vector<std::string> get_all_args();
+		std::vector<std::string> get_bare_args();
+		bool option_exists(std::string key);
+		bool bare_arg_exists(std::string key);
+		std::string get_option(std::string key);
+		std::string get_current_executable_name();
 
-    private:
-        std::vector<std::string> _raw_args;
-        std::map<std::string, std::string> _options;
+	private:
+		std::vector<std::string> _all_args;
+		std::vector<std::string> _bare_args;
+		std::map<std::string, std::string> _options;
+		std::string _executable_name;
 
-    };
-
+	};
 }
-
 
 
 #endif
