@@ -1,6 +1,6 @@
 
 OUTPUT_NAME = argparse
-COMPILER = g++ -g -std=c++11
+COMPILER = g++ -g -std=c++11 $(CFLAGS)
 
 
 executable:
